@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { GlobalContext } from '../../contexts/GlobalContext'
-import fbChangeFloorImage from '../../images/fb-change-floor.png'
+import fbChangeFloorImage from '../../assets/fb-change-floor.png'
 
 const FloatingButton = () => {
     const { setIsModalVisible } = useContext(GlobalContext)
