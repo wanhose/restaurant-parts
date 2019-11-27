@@ -25,7 +25,7 @@ const Picker = () => {
                                 </Text>
                                 { floors[key].id_floor === floorSelected ? <Image source = { floorSelectedImage } style = { styles.itemSelectedImage }/> : null }
                             </TouchableOpacity>
-                            { (floorsLength - 1) !== index ? <Divider/> : null }
+                            { (floorsLength - 1) !== index ? <Divider otherStyle = { styles.divider }/> : null }
                         </View>
                     )
                 })
@@ -41,20 +41,26 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         height: 'auto',
         marginTop: 'auto',
-        padding: 20
+        paddingHorizontal: 20
+    },
+    divider: {
+        paddingVertical: 20
     },
     item: {
         fontSize: 16,
-        letterSpacing: 1
+        letterSpacing: 1,
+        paddingVertical: 20
     },
     itemContainer: {
+        alignItems: 'center',
         flexDirection: 'row'
     },
     itemSelected: {
         color: 'gold',
         fontSize: 16,
         fontWeight: 'bold',
-        letterSpacing: 1
+        letterSpacing: 1,
+        paddingVertical: 20
     },
     itemSelectedImage: {
         height: 20,
