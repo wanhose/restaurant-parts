@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { FlatList, StyleSheet, View, Text } from 'react-native'
 import Divider from '../divider/Divider'
+import Swipeable from '../swipeable/CustomSwipeable'
 import TableListItem from './TableListItem'
 import { GlobalContext } from '../../contexts/GlobalContext'
 import data from '../../data/diagram.json'
@@ -27,9 +28,13 @@ const TableList = () => {
     _keyExtractor = (item) => 'key-' + item.id_table
 
     _renderItem = ({ item }) => (
-        <TableListItem 
-            id = { item.id_table }
-            title = { item.name_table }/>
+        <Swipeable
+            onSwipeLeft = { () => {} }
+            onSwipeRight = { () => {} }>
+            <TableListItem
+                id = { item.id_table }
+                title = { item.name_table }/>
+        </Swipeable>
     )
 
     return (

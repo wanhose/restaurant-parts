@@ -1,11 +1,9 @@
 import React from 'react'
 import { Image, Text, TouchableOpacity, StyleSheet, View } from 'react-native'
-import Swipeable from 'react-native-gesture-handler/Swipeable'
 import restaurantTableImage from '../../assets/restaurant-table.png'
 
 const TableListItem = (props) => {
     const {
-        id = null,
         title = "NO_TITLE"
     } = props
 
@@ -28,6 +26,7 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
     container: {
+        backgroundColor: 'white',
         padding: 15
     },
     icon: {
