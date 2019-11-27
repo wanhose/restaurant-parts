@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Divider from '../divider/Divider'
 import { GlobalContext } from '../../contexts/GlobalContext'
 import data from '../../data/diagram.json'
-import floorSelectedImage from '../../images/floor-selected.png'
+import floorSelectedImage from '../../assets/floor-selected.png'
 
 const Picker = () => {
     const { floorSelected, setFloorSelected } = useContext(GlobalContext)
@@ -11,7 +11,6 @@ const Picker = () => {
     const floorsLength =  Object.keys(floors).length
 
     return (
-        
         <View style = { styles.container }>
             {
                 Object.keys(floors).map((key, index) => {
