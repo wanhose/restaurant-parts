@@ -14,7 +14,7 @@ const AppNavigator = createStackNavigator(
             headerStyle: {
                 backgroundColor: 'gold',
                 elevation: 0,
-                height: 60
+                height: 65
             },
             headerTitleContainerStyle: {
                 justifyContent: 'center',
