@@ -6,7 +6,7 @@ import DataService from '../../services/DataService'
 import floorSelectedImage from '../../assets/floor-selected.png'
 
 const Picker = () => {
-    const { floorSelected, setFloorSelected } = useContext(GlobalContext)
+    const { dispatch, floorSelected, setFloorSelected } = useContext(GlobalContext)
     const floors = DataService.getFloors()
 
     return (
@@ -16,7 +16,10 @@ const Picker = () => {
                     return (
                         <View key = { floor.id_floor }>
                             <TouchableOpacity
-                                onPress = { () => setFloorSelected(floor.id_floor) }
+                                onPress = {() => {
+                                    setFloorSelected(floor.id_floor)
+                                    dispatch({ type: 'CLEAN' })
+                                }}
                                 style = { styles.itemContainer }>
                                 <Text
                                     style = { floor.id_floor === floorSelected ? styles.itemSelected : styles.item } >

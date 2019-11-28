@@ -16,7 +16,7 @@ const Restaurant = () => {
         YellowBox.ignoreWarnings([
             'Warning: componentWillMount has been renamed'
         ]);
-    })
+    }, [])
 
     return (
         <ScrollView
