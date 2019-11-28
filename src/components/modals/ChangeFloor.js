@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import Modal from 'react-native-modal'
 import Picker from '../picker/Picker'
 import { GlobalContext } from '../../contexts/GlobalContext'
@@ -22,7 +22,9 @@ const ChangeFloor = () => {
 }
 
 const styles = StyleSheet.create({
-
+    background: {
+        flex: 1
+    },
     modal: {
         margin: 0
     }

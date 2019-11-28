@@ -2,30 +2,29 @@ import React, { useContext } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Divider from '../divider/Divider'
 import { GlobalContext } from '../../contexts/GlobalContext'
-import data from '../../data/diagram.json'
+import DataService from '../../services/DataService'
 import floorSelectedImage from '../../assets/floor-selected.png'
 
 const Picker = () => {
     const { floorSelected, setFloorSelected } = useContext(GlobalContext)
-    const floors = data.floors
-    const floorsLength =  Object.keys(floors).length
+    const floors = DataService.getFloors()
 
     return (
         <View style = { styles.container }>
             {
-                Object.keys(floors).map((key, index) => {
+                floors.map((floor, index) => {
                     return (
-                        <View key = { floors[key].id_floor }>
+                        <View key = { floor.id_floor }>
                             <TouchableOpacity
-                                onPress = { () => setFloorSelected(key) }
+                                onPress = { () => setFloorSelected(floor.id_floor) }
                                 style = { styles.itemContainer }>
                                 <Text
-                                    style = { floors[key].id_floor === floorSelected ? styles.itemSelected : styles.item } >
-                                    { floors[key].name }
+                                    style = { floor.id_floor === floorSelected ? styles.itemSelected : styles.item } >
+                                    { floor.name }
                                 </Text>
-                                { floors[key].id_floor === floorSelected ? <Image source = { floorSelectedImage } style = { styles.itemSelectedImage }/> : null }
+                                { floor.id_floor === floorSelected ? <Image source = { floorSelectedImage } style = { styles.itemSelectedImage }/> : null }
                             </TouchableOpacity>
-                            { (floorsLength - 1) !== index ? <Divider otherStyle = { styles.divider }/> : null }
+                            { (floors.length - 1) !== index ? <Divider otherStyle = { styles.divider }/> : null }
                         </View>
                     )
                 })
