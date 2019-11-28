@@ -40,6 +40,8 @@ const CustomSwipeable = (props) => {
 
     return (
         <Swipeable
+            onSwipeableLeftOpen = { onSwipeLeft }
+            onSwipeableRightOpen = { onSwipeRight }
             renderLeftActions = { LeftActions }
             renderRightActions = { RightActions }>
             { props.children }
