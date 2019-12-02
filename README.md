@@ -16,4 +16,4 @@ npx react-native run-android
 Not tested yet.
 
 ## Quickly demo
-![](demo.gif)
+![](docs/demo.gif)
